@@ -1,7 +1,8 @@
-import { Text, View } from 'react-native';
+import { useState } from 'react';
+import { Button, Text, View } from 'react-native';
 
 export default function App() {
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(7);   //this the the state variable and the function to update it. The initial value is 0.
   return (
     <View
       style={{
@@ -10,7 +11,11 @@ export default function App() {
         alignItems: 'center',
       }}
     >
-      <Text>You pressed</Text>
+      <Text style={{ fontSize: 28 }}>You pressed {count} times</Text>
+      <Button
+        title="Press me"
+        onPress={() => setCount(count + 1)}
+      />
     </View>
   );
 }
